@@ -1,0 +1,33 @@
+{
+  "name": "back-end-crud-basic",
+  "version": "1.0.0",
+  "description": "Back-end de um crud básico utilizando Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "tsx watch src/server.ts",
+    "start": "node build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoferraari/back-end-crud-basic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leoferraari/back-end-crud-basic/issues"
+  },
+  "homepage": "https://github.com/leoferraari/back-end-crud-basic#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fastify": "^4.20.0",
+    "zod": "^3.21.4"
+  }
+}
