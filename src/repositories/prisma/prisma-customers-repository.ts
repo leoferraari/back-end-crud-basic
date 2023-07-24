@@ -21,4 +21,10 @@ export default class PrismaCustomersRepository implements CustomersRepository {
 
         return user
     }
+
+    async getAllCustomers(): Promise<Customers[]> {
+        const allCustomers = await prisma.customers.findMany({})
+
+        return allCustomers
+    }
 }
