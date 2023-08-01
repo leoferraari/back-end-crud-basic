@@ -3,8 +3,11 @@ import { ZodError } from 'zod'
 import { env } from './env'
 import { customersRoutes } from './http/controllers/customers/routes'
 
+const cors = require('cors');
+
 export const app = fastify()
 
+app.register(cors());
 app.register(customersRoutes)
 
 app.setErrorHandler((error, _, reply) => {
