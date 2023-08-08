@@ -6,7 +6,11 @@ import cors from '@fastify/cors'
 
 export const app = fastify()
 
-app.register(cors)
+app.register(cors, {
+    origin: ["http://localhost:3001"],
+    methods: ["GET", "POST", "DELETE", "PUT", "PATCH"]
+})
+
 app.register(customersRoutes)
 
 app.setErrorHandler((error, _, reply) => {
