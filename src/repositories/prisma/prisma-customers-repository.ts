@@ -27,4 +27,13 @@ export default class PrismaCustomersRepository implements CustomersRepository {
 
         return allCustomers
     }
+
+    async delete(id: string): Promise<null> {
+        await prisma.customers.delete({
+            where: {
+                id
+            }
+        })
+        return null
+    }
 }

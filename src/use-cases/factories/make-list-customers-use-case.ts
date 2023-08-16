@@ -2,9 +2,9 @@ import PrismaCustomersRepository from "@/repositories/prisma/prisma-customers-re
 import { ListCustomersCase } from "../list-customers"
 
 export function makeListCustomersUseCase() {
-    const usersRepository = new PrismaCustomersRepository()
+    const customersRepository = new PrismaCustomersRepository()
     const listCustomersUseCase = new ListCustomersCase(
-        usersRepository
+        customersRepository
     )
 
     return listCustomersUseCase
