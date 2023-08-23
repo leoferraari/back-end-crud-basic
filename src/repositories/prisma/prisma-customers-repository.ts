@@ -13,13 +13,26 @@ export default class PrismaCustomersRepository implements CustomersRepository {
     }
 
     async findByEmail(email: string): Promise<Customers | null> {
-        const user = await prisma.customers.findUnique({
+        const customer = await prisma.customers.findUnique({
             where: {
                 email,
             },
         })
 
-        return user
+        return customer
+    }
+
+    async findByEmailUpdate(email: string, id: string): Promise<Customers | null> {
+        const customer = await prisma.customers.findUnique({
+            where: {
+                email,
+                NOT: {
+                    id
+                },
+            },
+        })
+
+        return customer
     }
 
     async getAllCustomers(): Promise<Customers[]> {
@@ -35,5 +48,16 @@ export default class PrismaCustomersRepository implements CustomersRepository {
             }
         })
         return null
+    }
+
+    async update(id: string, data: Prisma.CustomersUpdateInput) {
+        const customer = await prisma.customers.update({
+            where: {
+                id
+            },
+            data
+        })
+
+        return customer
     }
 }
