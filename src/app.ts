@@ -7,7 +7,7 @@ import cors from '@fastify/cors'
 export const app = fastify()
 
 app.register(cors, {
-    origin: ["http://localhost:3001", "https://customers-app-leoferrari.netlify.app"],
+    origin: ["http://localhost:3001", "https://customers-app-leoferrari.netlify.app", "http://customers-app-leoferrari.netlify.app"],
     methods: ["GET", "POST", "DELETE", "PUT", "PATCH"]
 })
 
